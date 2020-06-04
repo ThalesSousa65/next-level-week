@@ -7,17 +7,20 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="/create-point-styles/dados-de-cadastro.css" />
+  <link rel="stylesheet" href="create-point-styles/items-grid.css" />
+
   <link rel="stylesheet" href="/home-styles/global.css" />
   <link rel="stylesheet" href="/home-styles/responsive.css" />
 
-  <link rel="stylesheet" href="/create-point-styles/styles.css" />
 </head>
 
 <body>
   <div id="page-create-point">
+
     <header>
       <img src="/assents/icones/logo.svg" alt="Logomarca" />
-      <a href="http://google.com.br">
+      <a href="/index.html">
         <span></span>
         Voltar para home
       </a>
@@ -33,44 +36,89 @@
 
         <div class="field">
           <label for="name">Nome da entidade</label>
-          <input type="text" name="name" />
+          <input type="text" name="name" required>
         </div>
 
         <div class="field-group">
           <div class="field">
             <label for="address">Endereço</label>
-            <input tyoe="text" name="address" />
+            <input type="text" name="address" required>
           </div>
+
           <div class="field">
             <label for="address2">Número/Complemento</label>
-            <input type="text" name="address2" />
+            <input type="text" name="address2" required>
           </div>
+
         </div>
+
         <div class="field-group">
           <div class="field">
             <label for="state">Estado</label>
-            <select name="uf">
+            <select name="uf" required>
               <option value="">Selecione o Estado</option>
             </select>
 
             <input type="hidden" name="state">
           </div>
+
           <div class="field">
             <label for="city">Cidade</label>
-            <select name="city">
+            <select name="city" disabled required>
               <option value="">Selecione a Cidade</option>
             </select>
           </div>
         </div>
+
       </fieldset>
+
       <fieldset>
-        <button type="submit">Cadastrar ponto de coleta</button>
         <legend>
           <h2>Ítem de coleta</h2>
         </legend>
+
+        <div class="items-grid">
+          <li date-id="1">
+            <img src="/assents/icones/lampadas.svg" alt="Lâmpadas">
+            <span>Lâmpadas</span>
+          </li>
+
+          <li date-id="2">
+            <img src="/assents/icones/baterias.svg" alt="Pilhas e Baterias">
+            <span>Pilhas e Baterias</span>
+          </li>
+
+          <li date-id="3">
+            <img src="/assents/icones/papeis-papelao.svg" alt="Papéis e Papelão">
+            <span>Papéis e Papelão</span>
+          </li>
+
+          <li date-id="4">
+            <img src="/assents/icones/eletronicos.svg" alt="Residuos Eletrônicos">
+            <span>Residuos Eletrônicos</span>
+          </li>
+
+          <li date-id="5">
+            <img src="/assents/icones/organicos.svg" alt="Residuos Orgânicos">
+            <span>Residuos Orgânicos</span>
+          </li>
+
+          <li date-id="6">
+            <img src="/assents/icones/oleo.svg" alt="Óleo de Cozinha">
+            <span>Óleo de Cozinha</span>
+          </li>
+
+        </div>
+
+        <input type="hidden" name="items">
+
       </fieldset>
+
+      <button type="submit">Cadastrar ponto de coleta</button>
     </form>
+
   </div>
+
   <script src="/script/creat-point.js"></script>
 </body>
 
